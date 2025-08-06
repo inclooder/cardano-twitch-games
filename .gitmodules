@@ -1,0 +1,3 @@
+[submodule "firefly-cardano"]
+	path = firefly-cardano
+	url = git@github.com:hyperledger/firefly-cardano.git

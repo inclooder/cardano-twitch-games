@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfjxw8ui1jjqe"]
+
+[ext_resource type="Script" uid="uid://uq0ly4x1hwrs" path="res://scenes/game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://b872s38v1i1ou" path="res://ui/modal.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://vg82yw0lhxyi" path="res://ui/create_game_ui.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://io1q41w1ooep" path="res://ui/games_list_ui.tscn" id="4_lbhrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
+bg_color = Color(0, 0, 0, 0.2)
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("modal_container", "modal_background", "top_menu", "leaderboard", "leaderboard_container")]
+script = ExtResource("1_uwrxv")
+modal_scene = ExtResource("2_yqjtg")
+create_game_scene = ExtResource("3_lnu2h")
+games_scene = ExtResource("4_lbhrr")
+modal_container = NodePath("HudLayer/Hud/ModalBackground/ModalContainer")
+modal_background = NodePath("HudLayer/Hud/ModalBackground")
+top_menu = NodePath("HudLayer/Hud/TopMenu")
+leaderboard = NodePath("HudLayer/Hud/Leaderboard")
+leaderboard_container = NodePath("HudLayer/Hud/Leaderboard/MarginContainer/LeaderboardContainer")
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" type="Control" parent="HudLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopMenu" type="MarginContainer" parent="HudLayer/Hud"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = -88.5
+offset_right = 278.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HudLayer/Hud/TopMenu"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="NewGameButton" type="Button" parent="HudLayer/Hud/TopMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+
+[node name="GamesButton" type="Button" parent="HudLayer/Hud/TopMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Games"
+
+[node name="SettingsButton" type="Button" parent="HudLayer/Hud/TopMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="HudLayer/Hud/TopMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="ModalBackground" type="MarginContainer" parent="HudLayer/Hud"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Panel" type="Panel" parent="HudLayer/Hud/ModalBackground"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="ModalContainer" type="CenterContainer" parent="HudLayer/Hud/ModalBackground"]
+layout_mode = 2
+
+[node name="Leaderboard" type="MarginContainer" parent="HudLayer/Hud"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="HudLayer/Hud/Leaderboard"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HudLayer/Hud/Leaderboard"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="LeaderboardContainer" type="VBoxContainer" parent="HudLayer/Hud/Leaderboard/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="HudLayer/Hud/Leaderboard/MarginContainer/LeaderboardContainer"]
+layout_mode = 2
+text = "1. ASfasd"
+
+[node name="Label2" type="Label" parent="HudLayer/Hud/Leaderboard/MarginContainer/LeaderboardContainer"]
+layout_mode = 2
+text = "1. ASfasd"
+
+[node name="Label3" type="Label" parent="HudLayer/Hud/Leaderboard/MarginContainer/LeaderboardContainer"]
+layout_mode = 2
+text = "1. ASfasd"
+
+[node name="Label4" type="Label" parent="HudLayer/Hud/Leaderboard/MarginContainer/LeaderboardContainer"]
+layout_mode = 2
+text = "1. ASfasd"
+
+[connection signal="pressed" from="HudLayer/Hud/TopMenu/HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="HudLayer/Hud/TopMenu/HBoxContainer/GamesButton" to="." method="_on_games_button_pressed"]
+[connection signal="pressed" from="HudLayer/Hud/TopMenu/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HudLayer/Hud/TopMenu/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

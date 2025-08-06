@@ -1,0 +1,367 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2tshnenr6myl"]
+
+[ext_resource type="Script" uid="uid://w87tbko7lej5" path="res://games/marbles_2d/marbles_2d.gd" id="1_2kifa"]
+[ext_resource type="PackedScene" uid="uid://b7772wwnic3j7" path="res://games/marbles_2d/marble.tscn" id="2_4x5xq"]
+[ext_resource type="PackedScene" uid="uid://cck1cfi51p2k" path="res://games/marbles_2d/terrain/box.tscn" id="3_yf5rb"]
+[ext_resource type="PackedScene" uid="uid://cn6d4v80p8dlf" path="res://games/marbles_2d/terrain/terrain_polygon.tscn" id="5_5cwli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kfmp"]
+size = Vector2(250, 250)
+
+[sub_resource type="QuadMesh" id="QuadMesh_8kfmp"]
+size = Vector2(250, 250)
+
+[node name="Marbles2D" type="Node2D" node_paths=PackedStringArray("camera", "marbles_container")]
+script = ExtResource("1_2kifa")
+marble_scene = ExtResource("2_4x5xq")
+camera = NodePath("Camera2D")
+marbles_container = NodePath("Marbles")
+
+[node name="UpdateLeaderboard" type="Timer" parent="."]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-8, -463)
+
+[node name="Marbles" type="Node2D" parent="."]
+
+[node name="StartingPoint" type="Node2D" parent="."]
+position = Vector2(-15, -462)
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Box" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-54, -6)
+rotation = 0.397744
+scale = Vector2(2.39317, 1)
+
+[node name="Box8" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-246, -198)
+rotation = 1.16051
+scale = Vector2(2.39317, 1)
+
+[node name="Box9" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-302, -453)
+rotation = 1.53044
+scale = Vector2(2.39317, 1)
+
+[node name="Box2" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(115, 15)
+
+[node name="Box3" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(225, 33)
+
+[node name="Box4" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(333, 50)
+
+[node name="Box11" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(838, 129)
+rotation = 0.130498
+
+[node name="Box5" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(436, 71)
+
+[node name="Box15" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1396, 391)
+rotation = -1.23966
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box16" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1548, 353)
+rotation = -1.23966
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box17" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1634, 284)
+rotation = -1.23966
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box18" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1742, 379)
+rotation = -1.23966
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box25" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4352, 517)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box26" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4458, 517)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box27" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4562, 522)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box28" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4642, 517)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box31" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4736, 526)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box32" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4840, 526)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box33" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4932, 531)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box34" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5031, 536)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box35" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5130, 538)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box36" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5220, 543)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box37" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5303, 548)
+rotation = -0.0186893
+scale = Vector2(0.339423, 3.02048)
+
+[node name="Box6" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(609, 55)
+
+[node name="Box7" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(876, -7.99999)
+rotation = -0.290239
+scale = Vector2(3.88, 1)
+
+[node name="Box12" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1106, 107)
+rotation = -0.145582
+scale = Vector2(3.88, 1)
+
+[node name="Box19" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4392, 292)
+rotation = -0.681422
+scale = Vector2(3.88, 1)
+
+[node name="Box20" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4627, -13.9999)
+rotation = -1.86941
+scale = Vector2(3.88, 1)
+
+[node name="Box54" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5588, 500)
+rotation = -5.61397
+scale = Vector2(2.14895, -1.70813)
+
+[node name="Box55" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5821, 510)
+rotation = -5.61397
+scale = Vector2(2.14895, -1.70813)
+
+[node name="Box56" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6065, 518)
+rotation = -5.61397
+scale = Vector2(2.14895, -1.70813)
+
+[node name="Box21" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(3974, 589)
+rotation = -3.32644
+scale = Vector2(3.88, 1)
+
+[node name="Box24" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4407, 567)
+rotation = -3.10812
+scale = Vector2(3.88, 1)
+
+[node name="Box29" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(4846, 581)
+rotation = -3.10812
+scale = Vector2(3.88, 1)
+
+[node name="Box30" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5273, 595)
+rotation = -3.10812
+scale = Vector2(3.88, 1)
+
+[node name="Box38" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(5704, 608)
+rotation = -3.10812
+scale = Vector2(3.88, 1)
+
+[node name="Box39" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6137, 621)
+rotation = -3.10812
+scale = Vector2(3.88, 1)
+
+[node name="Box40" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6557, 634)
+rotation = -3.10812
+scale = Vector2(3.88, 1)
+
+[node name="Box41" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6775, 427)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box42" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6757, 2.00006)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box43" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6747, -410)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box44" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6734, -781)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box45" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6721, -1173)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box46" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6708, -1557)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box47" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6693, -1961)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box48" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(6673, -2355)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box49" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-318, -808)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box50" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-328, -1217)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box51" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-353, -1616)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box52" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-368, -2020)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box53" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(-378, -2429)
+rotation = -4.74561
+scale = Vector2(3.88, 1)
+
+[node name="Box22" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(3528, 633)
+rotation = -3.12483
+scale = Vector2(3.88, 1)
+
+[node name="Box23" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(3039, 649)
+rotation = -3.27298
+scale = Vector2(4.63048, 1)
+
+[node name="Box13" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1046, 327)
+rotation = 0.37852
+scale = Vector2(3.88, 1)
+
+[node name="Box14" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(1461, 442)
+rotation = 0.10742
+scale = Vector2(3.88, 1)
+
+[node name="Box10" parent="Terrain" instance=ExtResource("3_yf5rb")]
+position = Vector2(622, 180)
+rotation = 0.360146
+scale = Vector2(3.88, 1)
+
+[node name="Polygon2D2" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(757, -284)
+polygon = PackedVector2Array(158.359, -2.72266, 1.20932, 233.417, -265.076, 182.457, -160.532, -52.0521, 138.606, -179.411)
+
+[node name="Polygon2D3" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(1411, -208)
+polygon = PackedVector2Array(203.266, 31.2239, 1.20932, 233.417, -183.505, 256.099, 25.7119, 80.6964, 138.606, -179.411)
+
+[node name="Polygon2D10" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(1923, -239)
+polygon = PackedVector2Array(203.266, 31.2239, 1.20932, 233.417, -183.505, 256.099, 25.7119, 80.6964, 138.606, -179.411)
+
+[node name="Polygon2D11" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(2434, -277)
+polygon = PackedVector2Array(203.266, 31.2239, 1.20932, 233.417, -183.505, 256.099, 25.7119, 80.6964, 138.606, -179.411)
+
+[node name="Polygon2D" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(164, -311)
+polygon = PackedVector2Array(231.352, -66.6138, 89.9075, 119.517, -34.1471, 278.216, -36.5375, -12.252, 20.6955, -42.865)
+
+[node name="Polygon2D4" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(2024, 472)
+polygon = PackedVector2Array(223.097, -226.816, 223.661, 79.598, -13.1105, 198.275, -268.87, 222.589, 20.6955, -42.865)
+
+[node name="Polygon2D5" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(2648, 463)
+polygon = PackedVector2Array(223.097, -226.816, 223.661, 79.598, -13.1105, 198.275, -268.87, 222.589, 20.6955, -42.865)
+
+[node name="Polygon2D6" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(2959, 309)
+polygon = PackedVector2Array(223.097, -226.816, 223.661, 79.598, -13.1105, 198.275, -237.63, 249.812, 20.6955, -42.865)
+
+[node name="Polygon2D7" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(3105, 213)
+polygon = PackedVector2Array(223.097, -226.816, 223.661, 79.598, -13.1105, 198.275, -266.156, 251.875, 20.6955, -42.865)
+
+[node name="Polygon2D8" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(3335, -98.0001)
+polygon = PackedVector2Array(223.097, -226.816, 223.661, 79.598, -13.1105, 198.275, -268.87, 222.589, 20.6955, -42.865)
+
+[node name="Polygon2D9" parent="Terrain" instance=ExtResource("5_5cwli")]
+position = Vector2(3737, 238)
+polygon = PackedVector2Array(223.097, -226.816, 223.661, 79.598, -13.1105, 198.275, -268.87, 222.589, 20.6955, -42.865)
+
+[node name="EndArea" type="Area2D" parent="."]
+position = Vector2(6641, 506)
+collision_layer = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
+shape = SubResource("RectangleShape2D_8kfmp")
+
+[node name="Label" type="Label" parent="EndArea"]
+offset_left = -49.0
+offset_top = -192.0
+offset_right = 48.0
+offset_bottom = -150.0
+theme_override_font_sizes/font_size = 30
+text = "FINISH"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EndArea"]
+modulate = Color(0, 0.709035, 0.759885, 0.14902)
+mesh = SubResource("QuadMesh_8kfmp")
+
+[connection signal="timeout" from="UpdateLeaderboard" to="." method="_on_update_leaderboard_timeout"]
+[connection signal="body_entered" from="EndArea" to="." method="_on_end_area_body_entered"]

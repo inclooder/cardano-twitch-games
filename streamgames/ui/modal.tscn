@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://b872s38v1i1ou"]
+
+[ext_resource type="Script" uid="uid://cwl0weh3wh8rh" path="res://ui/modal.gd" id="1_mnq1s"]
+[ext_resource type="Texture2D" uid="uid://mk5srfjdc2h1" path="res://assets/icons/close-icon.png" id="1_v014y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpdn1"]
+bg_color = Color(0.391759, 0.43675, 0.250239, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dumxo"]
+bg_color = Color(0.6, 0.6, 0.6, 0.596078)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[node name="Modal" type="PanelContainer" node_paths=PackedStringArray("content_container", "title_label")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qpdn1")
+script = ExtResource("1_mnq1s")
+content_container = NodePath("VBoxContainer/ContentContainer")
+title_label = NodePath("VBoxContainer/PanelContainer/MarginContainer2/HBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dumxo")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "TITLE OF THE THING"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="VBoxContainer/PanelContainer/MarginContainer2/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.584314)
+layout_mode = 2
+texture_normal = ExtResource("1_v014y")
+texture_pressed = ExtResource("1_v014y")
+texture_hover = ExtResource("1_v014y")
+texture_disabled = ExtResource("1_v014y")
+texture_focused = ExtResource("1_v014y")
+
+[node name="ContentContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer2/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

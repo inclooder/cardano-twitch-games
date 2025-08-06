@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7772wwnic3j7"]
+
+[ext_resource type="Script" uid="uid://dwt4hcpgt8m0n" path="res://games/marbles_2d/marble.gd" id="1_5amx8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5amx8"]
+bounce = 0.6
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5amx8"]
+radius = 25.02
+
+[sub_resource type="SphereMesh" id="SphereMesh_5amx8"]
+radius = 25.0
+height = 50.0
+
+[node name="Marble" type="RigidBody2D" node_paths=PackedStringArray("visible_body", "name_label")]
+collision_mask = 3
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_5amx8")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_5amx8")
+color = Color(0.858125, 0.564977, 0.661975, 1)
+visible_body = NodePath("MeshInstance2D")
+name_label = NodePath("CanvasLayer/NameLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5amx8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.858125, 0.564977, 0.661975, 1)
+mesh = SubResource("SphereMesh_5amx8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NameLabel" type="Label" parent="CanvasLayer"]
+offset_left = 175.871
+offset_top = 72.312
+offset_right = 237.871
+offset_bottom = 95.312
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player 1"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cck1cfi51p2k"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_712uh"]
+
+[sub_resource type="Gradient" id="Gradient_d63js"]
+colors = PackedColorArray(0.421074, 0.451047, 0.383591, 1, 1, 1, 1, 0.776471)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lgnwh"]
+gradient = SubResource("Gradient_d63js")
+fill_from = Vector2(0, 0.25641)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_712uh"]
+size = Vector2(116, 28)
+
+[node name="Box" type="StaticBody2D" groups=["terrain"]]
+collision_layer = 2
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(116.25, 27.25)
+mesh = SubResource("QuadMesh_712uh")
+texture = SubResource("GradientTexture2D_lgnwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_712uh")

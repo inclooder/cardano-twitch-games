@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://io1q41w1ooep"]
+
+[ext_resource type="Script" uid="uid://bvj37ljih30kj" path="res://ui/games_list_ui.gd" id="1_5t2ya"]
+[ext_resource type="PackedScene" uid="uid://j817410xv3br" path="res://ui/game_result_ui.tscn" id="2_bww0l"]
+
+[node name="GamesListUi" type="MarginContainer" node_paths=PackedStringArray("games_container")]
+custom_minimum_size = Vector2(1400, 800)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5t2ya")
+game_result_ui_scene = ExtResource("2_bww0l")
+games_container = NodePath("ScrollContainer/GamesContainer")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="GamesContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10

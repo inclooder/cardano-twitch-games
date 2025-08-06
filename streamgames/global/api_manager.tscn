@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6fhi8q6riukc"]
+
+[ext_resource type="Script" uid="uid://s0lxy6xjv6nd" path="res://global/api_manager.gd" id="1_a07n3"]
+
+[node name="ApiManager" type="Node"]
+script = ExtResource("1_a07n3")

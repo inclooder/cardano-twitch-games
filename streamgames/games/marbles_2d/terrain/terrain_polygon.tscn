@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn6d4v80p8dlf"]
+
+[ext_resource type="Script" uid="uid://cdk0m7foye6nv" path="res://games/marbles_2d/terrain/terrain_polygon.gd" id="1_e22wr"]
+[ext_resource type="Texture2D" uid="uid://oko2b1gmp42a" path="res://assets/lime-texture.jpg" id="1_uyq15"]
+
+[node name="TerrainPolygon" type="Polygon2D" node_paths=PackedStringArray("collision_polygon")]
+self_modulate = Color(0.625597, 0.625597, 0.625597, 1)
+rotation = 0.708696
+texture = ExtResource("1_uyq15")
+invert_border = 0.1
+polygon = PackedVector2Array(125.93, 31.6631, 89.9075, 119.517, -91.1085, 63.615, -36.5375, -12.252, 20.6955, -42.865)
+uv = PackedVector2Array(2946.74, 3420.87, 1395.62, 3451.44, 96.6455, 3397.95, 11.3785, 17.03, 3007.87, -2.29986)
+script = ExtResource("1_e22wr")
+collision_polygon = NodePath("StaticBody2D/CollisionPolygon2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["terrain"]]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]

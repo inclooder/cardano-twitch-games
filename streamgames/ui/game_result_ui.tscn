@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://j817410xv3br"]
+
+[ext_resource type="Script" uid="uid://b5o5l576i2s7q" path="res://ui/game_result_ui.gd" id="1_ehkkq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5t2ya"]
+bg_color = Color(0.6, 0.6, 0.6, 0.521569)
+
+[node name="GameResultUi" type="MarginContainer" node_paths=PackedStringArray("game_name_label", "winners_label", "tx_hash_label")]
+script = ExtResource("1_ehkkq")
+game_name_label = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/GameNameLabel")
+winners_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer2/WinnersLabel")
+tx_hash_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer3/TxHashLabel")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5t2ya")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GameNameLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Some name"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Winners" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Winners"
+
+[node name="WinnersLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "asdfhlkasdf 1 ADA
+sadfasdfsadf 2 ADA
+34sadfasd f3 ada"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TxHash" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "TxHash"
+
+[node name="TxHashLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "asdfasdfasdfasdf"
+
+[node name="CopyTxHashButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Copy"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/CopyTxHashButton" to="." method="_on_copy_tx_hash_button_pressed"]
