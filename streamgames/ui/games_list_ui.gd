@@ -35,9 +35,11 @@ func _update_games(games):
 		for reward in game.rewards:
 			if game.winners.size() > idx:
 				winners += "%s won %.2f ADA\n" % [game.winners[idx], reward.ada / 1000000]
+				
+			idx += 1
 
 		result_ui.winners = winners
-		result_ui.tx_hash = game['txHash']
+		result_ui.tx_hash = game['txHash'] if game['txHash'] != null else ""
 	
 		games_container.add_child(result_ui)
 		
